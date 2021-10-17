@@ -183,8 +183,8 @@ async def echo(bot, update):
                 if format_string is not None and not "audio only" in format_string:
                     ikeyboard = [
                         InlineKeyboardButton(
-                            "🎞S " + format_string + " video " + approx_file_size + " ",
-                            callback_data=(cb_string_video).encode("UTF-8")
+                            "🎞S " + format_string + " video " + approx_file_size +  " file ",
+                            callback_data=(cb_string_video)(cb_string_file).encode("UTF-8")
                         )
                     ]
                     """if duration is not None:
@@ -204,7 +204,7 @@ async def echo(bot, update):
                             "🎞SVideo [" +
                             "] ( " +
                             approx_file_size + " )",
-                            callback_data=(cb_string_video).encode("UTF-8")
+                            callback_data=(cb_string_video)(cb_string_file).encode("UTF-8")
                         )
                     ]
                 inline_keyboard.append(ikeyboard)
@@ -232,7 +232,7 @@ async def echo(bot, update):
             inline_keyboard.append([
                 InlineKeyboardButton(
                     "🎞SVideo",
-                    callback_data=(cb_string_video).encode("UTF-8")
+                    callback_data=(cb_string_video)(cb_string_file).encode("UTF-8")
                 )
             ])
             cb_string_file = "{}={}={}".format(
@@ -242,7 +242,7 @@ async def echo(bot, update):
             inline_keyboard.append([
                 InlineKeyboardButton(
                     "🎞video",
-                    callback_data=(cb_string_video).encode("UTF-8")
+                    callback_data=(cb_string_video)(cb_string_file).encode("UTF-8")
                 )
             ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
@@ -285,7 +285,7 @@ async def echo(bot, update):
         inline_keyboard.append([
             InlineKeyboardButton(
                 "🎞SVideo",
-                callback_data=(cb_string_video).encode("UTF-8")
+                callback_data=(cb_string_video)(cb_string_file).encode("UTF-8")
             )
         ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
